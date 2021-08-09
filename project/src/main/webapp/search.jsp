@@ -1,3 +1,7 @@
+<%@page import="model.userVO"%>
+<%@page import="model.storeVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.storeDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,8 +38,11 @@ https://templatemo.com/tm-564-plot-listing
 
 <body>
 
+ <%
+userVO vo = (userVO)session.getAttribute("vo_session");
+%>
   <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">l
+  <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
       <span class="dot"></span>
       <div class="dots">
@@ -59,11 +66,17 @@ https://templatemo.com/tm-564-plot-listing
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp">홈</a></li>
+              <li><a href="index.jsp" class="active">홈</a></li>
               <li><a href="listing.jsp">추천리스트</a></li>
               <li><a href="gotgan.jsp">곳간</a></li>
-              <li><a href="contact.jsp">마이페이지</a></li> 
-              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
+               
+              <%if (vo==null){%> 
+              <li><div class="main-white-button"><a href="loginForm.jsp"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
+              <%} else {  %>
+                <li><a href="contact.jsp">마이페이지</a></li>
+               <li><a href="logoutCon">로그아웃</a></li>
+                
+              <%} %>
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -98,18 +111,28 @@ https://templatemo.com/tm-564-plot-listing
             <h6>customize</h6>
           </div>
         </div>
+   <!-- ==================================================================================== -->
         <div class="col-lg-12">
           <div class="owl-carousel owl-listing">
             <div class="item">
               <div class="row">
+     <!-- ==================================================================================== -->
+  <%
+	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("euc-kr");
+	String search = request.getParameter("address");	
+	storeDAO dao = new storeDAO();
+    ArrayList<storeVO> arr = dao.search(search);
+  %>
+  <% for (int i=0; i<arr.size(); i++){%>
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
                       <a href="#"><img src="assets/images/listing-01.jpg" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
-                      <a href="#"><h4>1. First Apartment Unit</h4></a>
-                      <h6>by: Sale Agent</h6>
+                      <a href="#"><h4> <%=arr.get(i).getName() %></h4></a>
+                      <h6><%=arr.get(i).getType() %></h6>
                       <ul class="rate">
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
@@ -118,7 +141,7 @@ https://templatemo.com/tm-564-plot-listing
                         <li><i class="fa fa-star-o"></i></li>
                         <li>(18) Reviews</li>
                       </ul>
-                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $450 - $950 / month with taxes</span>
+                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div>  <%=arr.get(i).getAddr() %></span>
                       <span class="details">Details: <em>2760 sq ft</em></span>
                       <ul class="info">
                         <li><img src="assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
@@ -130,118 +153,11 @@ https://templatemo.com/tm-564-plot-listing
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="assets/images/listing-02.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>2. Another House of Gaming</h4></a>
-                      <h6>by: Top Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(24) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $1,400 - $3,500 / month with taxes</span>
-                      <span class="details">Details: <em>3650 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>3. Secret Place Hidden House</h4></a>
-                      <h6>by: Best Property</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(36) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $1,500 - $3,600 / month with taxes</span>
-                      <span class="details">Details: <em>5500 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>3. Secret Place Hidden House</h4></a>
-                      <h6>by: Best Property</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(36) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $1,500 - $3,600 / month with taxes</span>
-                      <span class="details">Details: <em>5500 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>3. Secret Place Hidden House</h4></a>
-                      <h6>by: Best Property</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(36) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $1,500 - $3,600 / month with taxes</span>
-                      <span class="details">Details: <em>5500 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+     <% }%>
+    <!-- ==================================================================================== -->
+ 
+
+              
               </div>
             </div>
             

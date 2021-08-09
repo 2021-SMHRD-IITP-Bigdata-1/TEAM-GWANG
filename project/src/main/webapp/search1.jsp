@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.storeDAO"%>
 <%@page import="model.storeVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -9,17 +11,18 @@
 </head>
 <body>
 	<%
-	
-	storeVO vo = (storeVO)session.getAttribute("vo_session");
-	// jsp에서 session은 내장 객체 이므로 선언하지 않고 사용 가능
-	// Servlet에서는 session을 선언해줘야함
-	
-	
+	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("euc-kr");
+	String search = request.getParameter("search");	
+	storeDAO dao = new storeDAO();
+    ArrayList<storeVO> arr = dao.search(search);
 	%>
-	<H1>나한테 왜 그래!!!!!!!!!</H1>
-	<%= vo.getName() %>
-	<%= vo.getCell() %>
-	<%= vo.getTime() %>
-	<%= vo.getAddr() %>
+	<% for (int i=0; i<arr.size(); i++){%>
+                    	 <%=arr.get(i).getName() %>
+                    	 <%=arr.get(i).getCell() %>
+                    	 <%=arr.get(i).getAddr() %>
+                    	 <%=arr.get(i).getType() %>
+                    	 <br>    
+                <% }%>
 </body>
 </html>

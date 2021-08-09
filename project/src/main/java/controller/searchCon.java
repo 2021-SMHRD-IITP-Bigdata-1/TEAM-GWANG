@@ -28,9 +28,9 @@ public class searchCon extends HttpServlet {
 		
 		
 		storeDAO dao = new storeDAO();
-		storeVO vo = dao.search(search);
+	//	storeVO vo = dao.search(search);
 		
-		session.setAttribute("vo_session", vo);
+	//	session.setAttribute("vo_session", vo);
 			
 		response.sendRedirect("search1.jsp");
 		

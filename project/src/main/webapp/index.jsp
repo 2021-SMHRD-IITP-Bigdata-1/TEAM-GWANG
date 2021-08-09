@@ -128,6 +128,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                   <fieldset>
                       <button class="main-button"><i class="fa fa-search" ></i> Search Now</button>
                   </fieldset>
+            
               </div>
             </div>
           </form>

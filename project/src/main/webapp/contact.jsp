@@ -1,3 +1,4 @@
+<%@page import="model.userVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,7 +34,9 @@ https://templatemo.com/tm-564-plot-listing
   </head>
 
 <body>
-
+<%
+userVO vo = (userVO)session.getAttribute("vo_session");
+%>
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -59,11 +62,17 @@ https://templatemo.com/tm-564-plot-listing
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp">홈</a></li>
+              <li><a href="index.jsp" class="active">홈</a></li>
               <li><a href="listing.jsp">추천리스트</a></li>
               <li><a href="gotgan.jsp">곳간</a></li>
-              <li><a href="contact.jsp" class="active">마이페이지</a></li> 
-              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i>로그인/회원가입</a></div></li> 
+               
+              <%if (vo==null){%> 
+              <li><div class="main-white-button"><a href="loginForm.jsp"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
+              <%} else {  %>
+                <li><a href="contact.jsp">마이페이지</a></li>
+               <li><a href="logoutCon">로그아웃</a></li>
+                
+              <%} %>
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>

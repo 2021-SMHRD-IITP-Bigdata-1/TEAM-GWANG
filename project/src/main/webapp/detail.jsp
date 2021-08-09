@@ -1,3 +1,4 @@
+<%@page import="model.userVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -463,17 +464,23 @@ ul.page-numbers li a:hover {
 
   <body>
      
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+<%
+userVO vo = (userVO)session.getAttribute("vo_session");
+%>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
+  <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
       <div class="row">
@@ -485,11 +492,17 @@ ul.page-numbers li a:hover {
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp">홈</a></li>
-              <li><a href="listing.jsp" class="active">추천리스트</a></li>
-              <li><a href="gotgan.jsp" >곳간</a></li>
-              <li><a href="contact.jsp">마이페이지</a></li> 
-              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i>로그인/회원가입</a></div></li> 
+              <li><a href="index.jsp" class="active">홈</a></li>
+              <li><a href="listing.jsp">추천리스트</a></li>
+              <li><a href="gotgan.jsp">곳간</a></li>
+               
+              <%if (vo==null){%> 
+              <li><div class="main-white-button"><a href="loginForm.jsp"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
+              <%} else {  %>
+                <li><a href="contact.jsp">마이페이지</a></li>
+               <li><a href="logoutCon">로그아웃</a></li>
+                
+              <%} %>
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>

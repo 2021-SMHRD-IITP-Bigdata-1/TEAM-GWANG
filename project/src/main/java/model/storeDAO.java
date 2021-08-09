@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+
 
 public class storeDAO {
 
@@ -50,8 +53,9 @@ public class storeDAO {
 		}
 	}
 
-	public storeVO search(String search) {
+	public ArrayList<storeVO> search(String search) {
 
+		ArrayList<storeVO> arr = new ArrayList<storeVO>();
 		try {
 
 			conn();
@@ -64,21 +68,16 @@ public class storeDAO {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				String name = rs.getString(2);
 				String cell = rs.getString(3);
 				String type = rs.getString(4);
 				String time = rs.getString(5);
 				String addr = rs.getString(6);
 				
-				System.out.println(name);
-				System.out.println(cell);
-				System.out.println(type);
-				System.out.println(time);
-				System.out.println(addr);
-
+				
 				vo = new storeVO(name, cell, type, time, addr);
-
+				arr.add(vo);
 			}
 
 		} catch (Exception e) {
@@ -87,6 +86,6 @@ public class storeDAO {
 
 			close();
 		}
-		return vo;
+		return arr;
 	}
 }

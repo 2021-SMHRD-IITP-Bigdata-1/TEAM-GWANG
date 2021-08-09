@@ -22,12 +22,54 @@
   			-moz-appearance: none;
   			appearance: none;
   			outline: none;
+  			margin : 10px;
 			}
+			div.wrap {
+ 		    height: 100%;
+		    width: 100%;
+		    background-image: url(img/banner-bg.jpg);
+		    background-position: center;
+		    background-size: cover;
+		    position: absolute;
+}
+
 
 select:focus {
   border-color: #0094e1;
 }
+.idcheck, #sp {
+	
+  
+   font-family: Arial, sans-serif;
+	
+	font-size: 12px;
+}
+
+
+
+
+.idcheck {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display : block;
+    margin : auto;
+    max-width: 180px;
+    text-decoration: none;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    padding: 6px 35px;
+     border-radius: 30px;
+     border : 0;
+}
+
+
+
+
+
         </style>
+
 </head>
 <body>
  <div class="wrap">
@@ -41,14 +83,14 @@ select:focus {
                 <form id="login" action="loginCon" class="input-group" method="post">
                     <input type="text" class="input-field" name='id' placeholder="아이디 입력" required>
                     <input type="password" class="input-field" name='pw' placeholder="비밀번호 입력" required>
-                    <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                    
                     <button class="submit">Login</button>
                 </form>
+                
                 <form id="register" action="joinCon" class="input-group" method="post">
-                    <input type="text" class="input-field" name="id" placeholder="id 입력" required>
-                   <!--   <form action = "idCheckCon.jsp">
-                    	<input type="button"  value="ID중복체크" onclick="idCheck()">
-                    </form> -->
+                    <input type="text" class="input-field" id="input_id" name="id" placeholder="id 입력" required>
+                  	<ul id="sp" align="center"></ul>
+                  	<input type="button" class="idcheck" value="ID중복체크" onclick="idCheck()" display="button">
                     <input type="password" class="input-field" name="pwd" placeholder="Enter Password" required>
                     <input type="text" class="input-field" name="name" placeholder="이름 입력" required>
                     <input type="text" class="input-field" name="addr" placeholder="주소 입력" required>
@@ -57,7 +99,6 @@ select:focus {
                     	<option value = "classic">클래식</option>
                     	<option value = "vintage">빈티지</option>
                     	<option value = "retro">레트로</option>
-                    	<option value = "retro">럭셔리</option>
                     </select>
                     
                     <br>
@@ -65,6 +106,11 @@ select:focus {
                 </form>
             </div>
         </div>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery.scrollex.min.js"></script>
+        <script src="vendor/jquery/jquery.scrolly.min.js"></script>
+			
+			
         <script>
             var x = document.getElementById("login");
             var y = document.getElementById("register");
@@ -82,6 +128,40 @@ select:focus {
                 y.style.left = "50px";
                 z.style.left = "110px";
             }
+            function idCheck(){
+				var input = document.getElementById("input_id");
+				//innerText, innerHTML, value (input)
+				//alert(input.value);
+				$.ajax({
+					//데이터 전송방식(get/post)
+					type : "post",
+					//전송할 데이터
+					data : {"id" : input.value},
+					//데이터를 전송할 서버페이지
+					url : "idCheckCon",
+					//응답데이터 타입
+					dataType : "text",
+					success : function(data){
+						//alert(data);
+						var sp = document.getElementById("sp");
+						
+						if (data == "true"){
+							sp.innerHTML = "이미 가입된 이메일 입니다."
+						}else {
+							sp.innerHTML = "사용 가능한 이메일 입니다."
+						}
+					},
+					error : function(){
+						alert("실패");
+					}
+					
+				});
+			}
+		
+           
+			
+		
+		
         </script>
         
 </body>
