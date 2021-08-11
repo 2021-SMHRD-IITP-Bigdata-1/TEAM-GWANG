@@ -4,8 +4,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-  <head>
+	<head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,9 +53,7 @@ https://templatemo.com/tm-564-plot-listing
   </head>
 
 <body>
-<%
-userVO vo = (userVO)session.getAttribute("vo_session");
-%>
+
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -77,22 +74,16 @@ userVO vo = (userVO)session.getAttribute("vo_session");
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.jsp" class="logo">
+            <a href="index.html" class="logo">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp" class="active">홈</a></li>
-              <li><a href="listing.jsp">추천리스트</a></li>
-              <li><a href="gotgan.jsp">곳간</a></li>
-               
-              <%if (vo==null){%> 
-              <li><div class="main-white-button"><a href="loginForm.jsp"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
-              <%} else {  %>
-                <li><a href="contact.jsp">마이페이지</a></li>
-               <li><a href="logoutCon">로그아웃</a></li>
-                
-              <%} %>
+              <li><a href="index.html" class="active">홈</a></li>
+              <li><a href="listing.html">추천리스트</a></li>
+              <li><a href="gotgan.html">곳간</a></li>
+              <li><a href="mypage.html">마이페이지</a></li> 
+              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -115,7 +106,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
           </div>
         </div>
         <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="search.jsp">
+          <form id="search-form" name="gs" method="submit" role="search" action="search.html">
             <div class="row" id = "flex">
               
               <div class="col-lg-3 align-self-center search1">
@@ -128,17 +119,16 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                   <fieldset>
                       <button class="main-button"><i class="fa fa-search" ></i> Search Now</button>
                   </fieldset>
-            
               </div>
             </div>
           </form>
         </div>
         <div class="col-lg-10 offset-lg-1">
           <ul class="categories">
-            <li><a href="listing.jsp"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Modern"></span> Modern</a></li>
-            <li><a href="listing.jsp"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Classic"></span> Classic</a></li>
-            <li><a href="listing.jsp"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Vintage"></span> Vintage</a></li>
-            <li><a href="listing.jsp"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Retro"></span> Retro</a></li>
+            <li><a href="listing.html"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Modern"></span> Modern</a></li>
+            <li><a href="listing.html"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Classic"></span> Classic</a></li>
+            <li><a href="listing.html"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Vintage"></span> Vintage</a></li>
+            <li><a href="listing.html"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Retro"></span> Retro</a></li>
             <!-- 아이콘을 클릭하면 해당 페이지로 연결 -->
           </ul>
         </div>
@@ -182,7 +172,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -210,7 +200,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -238,7 +228,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -270,7 +260,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -298,7 +288,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -326,7 +316,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -358,7 +348,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 5 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -386,7 +376,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i>  자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i>  자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -414,7 +404,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                         <li><img src="assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="detail.jsp"><i class="fa fa-eye"></i> 자세히보기</a>
+                        <a href="detail.html"><i class="fa fa-eye"></i> 자세히보기</a>
                       </div>
                     </div>
                   </div>
@@ -524,7 +514,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                               <div class="left-text">
                                 <h4>Best car rentals for your trips!</h4>
                                 <p>Did you know? You can get the best free HTML templates on Too CSS blog. Visit the blog pages and explore fresh and latest website templates.</p>
-                                <div class="main-white-button"><a href="listing.jsp"><i class="fa fa-eye"></i> More Listing</a></div>
+                                <div class="main-white-button"><a href="listing.html"><i class="fa fa-eye"></i> More Listing</a></div>
                               </div>
                             </div>
                             <div class="col-lg-7 align-self-center">
@@ -594,7 +584,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
             <div class="logo">
               <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p>If you consider that <a rel="nofollow" href="https://templatemo.com/tm-564-plot-listing" target="_parent">Plot Listing template</a> is useful for your website, please <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little via PayPal.</p>
+            <p>해시태그로 믿을만한 광주곳곳 맛집을 소개해주는 곳</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -623,13 +613,10 @@ userVO vo = (userVO)session.getAttribute("vo_session");
         <div class="col-lg-4">
           <div class="contact-us">
             <h4>Contact Us</h4>
-            <p>27th Street of New Town, Digital Villa</p>
+            <p>Gwang Team</p>
             <div class="row">
               <div class="col-lg-6">
-                <a href="#">010-020-0340</a>
-              </div>
-              <div class="col-lg-6">
-                <a href="#">090-080-0760</a>
+                <a href="#">010-0000-0000</a>
               </div>
             </div>
           </div>
@@ -655,5 +642,5 @@ userVO vo = (userVO)session.getAttribute("vo_session");
   <script src="assets/js/custom.js"></script>
 
 </body>
-
+  
 </html>

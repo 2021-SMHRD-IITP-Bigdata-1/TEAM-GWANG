@@ -3,8 +3,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-  <head>
+	<head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,9 +34,6 @@ https://templatemo.com/tm-564-plot-listing
 
 <body>
 
-  <%
-userVO vo = (userVO)session.getAttribute("vo_session");
-%>
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -58,22 +54,16 @@ userVO vo = (userVO)session.getAttribute("vo_session");
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.jsp" class="logo">
+            <a href="index.html" class="logo">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp" class="active">홈</a></li>
-              <li><a href="listing.jsp">추천리스트</a></li>
-              <li><a href="gotgan.jsp">곳간</a></li>
-               
-              <%if (vo==null){%> 
-              <li><div class="main-white-button"><a href="loginForm.jsp"><i class="fa fa-plus"></i> 로그인/회원가입</a></div></li> 
-              <%} else {  %>
-                <li><a href="contact.jsp">마이페이지</a></li>
-               <li><a href="logoutCon">로그아웃</a></li>
-                
-              <%} %>
+              <li><a href="index.html">홈</a></li>
+              <li><a href="listing.html" class="active">추천리스트</a></li>
+              <li><a href="gotgan.html" >곳간</a></li>
+              <li><a href="mypage.html">마이페이지</a></li> 
+              <li><div class="main-white-button"><a href="#"><i class="fa fa-plus"></i>로그인/회원가입</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -149,7 +139,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-01.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -168,7 +158,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-02.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -187,7 +177,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -210,7 +200,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-01.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -229,7 +219,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-02.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -248,7 +238,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -273,7 +263,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-01.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -292,7 +282,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-02.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -311,7 +301,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -344,7 +334,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-04.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -363,7 +353,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-05.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -382,7 +372,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -407,7 +397,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-05.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -426,7 +416,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-04.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -445,7 +435,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -480,7 +470,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-05.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -499,7 +489,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-04.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -518,7 +508,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -543,7 +533,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-01.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -562,7 +552,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-02.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -581,7 +571,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-06.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -619,7 +609,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-06.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -638,7 +628,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-04.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -657,7 +647,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -682,7 +672,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-05.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -701,7 +691,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-06.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -720,7 +710,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-03.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -745,7 +735,7 @@ userVO vo = (userVO)session.getAttribute("vo_session");
                                       <a href="#"><img src="assets/images/listing-06.jpg" alt=""></a>
                                       <div class="hover-content">
                                         <div class="main-white-button">
-                                          <a href="contact.jsp"><i class="fa fa-eye"></i> Contact Now</a>
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
                                         </div>
                                       </div>
                                     </div>
@@ -785,16 +775,16 @@ userVO vo = (userVO)session.getAttribute("vo_session");
         <div class="col-lg-4">
           <div class="about">
             <div class="logo">
-              <img src="assets/images/black-logo.png" alt="">
+              <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adicingi elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua.</p>
+            <p>해시태그로 믿을만한 광주곳곳 맛집을 소개해주는 곳</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="helpful-links">
             <h4>Helpful Links</h4>
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-sm-6">
                 <ul>
                   <li><a href="#">Categories</a></li>
                   <li><a href="#">Reviews</a></li>
@@ -816,13 +806,10 @@ userVO vo = (userVO)session.getAttribute("vo_session");
         <div class="col-lg-4">
           <div class="contact-us">
             <h4>Contact Us</h4>
-            <p>27th Street of New Town, Digital Villa</p>
+            <p>Gwang Team</p>
             <div class="row">
               <div class="col-lg-6">
-                <a href="#">010-020-0340</a>
-              </div>
-              <div class="col-lg-6">
-                <a href="#">090-080-0760</a>
+                <a href="#">010-0000-0000</a>
               </div>
             </div>
           </div>
@@ -847,5 +834,6 @@ userVO vo = (userVO)session.getAttribute("vo_session");
   <script src="assets/js/custom.js"></script>
 
 </body>
+  
 
 </html>
